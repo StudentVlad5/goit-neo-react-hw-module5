@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
 import { FaSearchengin, FaTimesCircle } from 'react-icons/fa';
-import css from './Searchbar.module.css';
+import css from './SearchBar.module.css';
 
 function Searchbar() {
   const [searchParams, setSearchParams] = useSearchParams();
