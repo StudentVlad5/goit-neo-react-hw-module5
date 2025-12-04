@@ -1,0 +1,153 @@
+/* Анімація появи зверху */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.searchBar {
+  position: sticky;
+  top: 0;
+  z-index: 1100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;
+  min-height: 70px;
+  padding: 15px 20px;
+
+  background-color: var(--bg-dark);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+.searchForm {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+
+  background-color: var(--input-bg);
+  border-radius: 50px;
+  overflow: hidden;
+  padding: 5px 10px;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.searchForm:focus-within {
+  transform: scale(1.02);
+  box-shadow: 0 0 20px var(--primary-glow);
+  border-color: #3c93d5;
+}
+
+.searchFormInput {
+  flex: 1;
+  font-family: inherit;
+  font-size: 18px;
+  border: none;
+  outline: none;
+  padding: 10px 15px;
+  color: #333;
+  background: transparent;
+}
+
+.searchFormInput::placeholder {
+  color: #aaa;
+  font-weight: 400;
+}
+
+.searchFormButton,
+.searchFormBtnClear {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  outline: none;
+}
+
+.searchFormBtnClear {
+  color: #888;
+  margin-right: 5px;
+}
+
+.searchFormBtnClear:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  transform: rotate(90deg) scale(1.1);
+}
+
+.searchFormBtnClear svg {
+  transition: fill 0.3s ease;
+}
+
+.searchFormBtnClear:hover svg {
+  fill: #ff4d4d !important;
+}
+
+.searchFormButton {
+  background-color: #eef4fb;
+  width: 45px;
+  height: 45px;
+}
+
+.searchFormButton:hover {
+  background-color: #3c93d5;
+  transform: scale(1.1);
+  box-shadow: 0 2px 8px rgba(60, 147, 213, 0.4);
+}
+
+.searchFormButton svg {
+  transition: fill 0.3s ease;
+}
+
+.searchFormButton:hover svg {
+  fill: #ffffff !important;
+}
+
+.searchFormButtonLabel {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 600px) {
+  .searchBar {
+    padding: 10px;
+  }
+
+  .searchForm {
+    border-radius: 30px;
+  }
+
+  .searchFormInput {
+    font-size: 16px;
+    padding: 8px 10px;
+  }
+
+  .searchFormButton {
+    width: 40px;
+    height: 40px;
+  }
+}

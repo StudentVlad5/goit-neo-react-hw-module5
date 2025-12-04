@@ -1,0 +1,24 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+  padding: 40px;
+  gap: 40px;
+  font-size: 14px;
+}
+.homeTitle {
+  @media screen and (max-width: 320px) {
+    font-size: 14px;
+  }
+  @media screen and (max-width: 780px) {
+    font-size: 20px;
+  }
+  @media screen and (max-width: 1200px) {
+    font-size: 24px;
+  }
+}
+.homeSubtitle {
+  font-size: 14px;
+}

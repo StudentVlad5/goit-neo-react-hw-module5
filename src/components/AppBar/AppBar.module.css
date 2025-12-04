@@ -1,0 +1,116 @@
+.layout {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  width: 100%;
+  background-color: var(--bg-header);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.containerWrap {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 70px;
+}
+
+.menuList {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.menuItem {
+  display: flex;
+}
+
+.navLink {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 600;
+  font-size: 18px;
+  color: var(--text-color);
+  text-decoration: none;
+  border-radius: 12px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.icon {
+  font-size: 20px;
+  transition: transform 0.3s ease;
+}
+
+.navLink:hover {
+  color: var(--primary-color);
+  background-color: var(--hover-bg);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(248, 220, 47, 0.15);
+}
+
+.navLink:hover .icon {
+  transform: scale(1.2) rotate(-10deg); /* Анімація іконки */
+}
+
+.active {
+  color: #1e1e2e; /* Темний текст на золотому фоні */
+  background-color: var(--primary-color);
+  box-shadow: 0 0 15px rgba(248, 220, 47, 0.4);
+}
+
+.active .icon {
+  color: #1e1e2e;
+}
+
+.navLink:active {
+  transform: scale(0.96);
+}
+
+.mainContent {
+  flex: 1;
+  padding: 20px;
+}
+
+@media screen and (max-width: 600px) {
+  .containerWrap {
+    height: auto;
+    padding: 10px;
+  }
+
+  .menuList {
+    width: 100%;
+    justify-content: space-between;
+    gap: 5px;
+  }
+
+  .navLink {
+    flex-direction: column;
+    font-size: 12px;
+    padding: 8px 12px;
+    gap: 4px;
+    border-radius: 8px;
+  }
+
+  .icon {
+    font-size: 22px;
+  }
+}
