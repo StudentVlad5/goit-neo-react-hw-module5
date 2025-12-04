@@ -1,4 +1,4 @@
-import TMBD from '../../Images/TMBD.svg';
+import TMBD from '../../images/TMBD.svg';
 import css from './Home.module.css';
 
 const Home = () => {

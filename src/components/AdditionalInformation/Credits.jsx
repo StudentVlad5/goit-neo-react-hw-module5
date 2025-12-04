@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { useParams } from 'react-router-dom';
-import NoFoto from '../../Images/no_image.png';
+import NoFoto from '../../images/no_image.png';
 
 function Credits() {
   const [status, setStatus] = useState('idle');

@@ -1,17 +1,13 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
-// import TrendingMoves from '../Pages/TrendingMovies';
-// import Move from './Moves/Moves';
 import AppBar from './AppBar/AppBar';
-// import NotFound from '../Pages/NotFind';
 import './App.css';
-// import FilteredMovies from '../Pages/FilteredMovies';
 
-const TrendingMovies = lazy(() => import('../Pages/TrendingMovies'));
+const TrendingMovies = lazy(() => import('../pages/TrendingMovies'));
 const Movies = lazy(() => import('./Movies/Movies'));
-const FilteredMovies = lazy(() => import('../Pages/FilteredMovies'));
-const NotFound = lazy(() => import('../Pages/NotFind'));
+const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
+const NotFound = lazy(() => import('../pages/NotFind'));
 const Reviews = lazy(() => import('./AdditionalInformation/Reviews'));
 const Credits = lazy(() => import('./AdditionalInformation/Credits'));
 
