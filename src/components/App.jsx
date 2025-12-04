@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import AppBar from './AppBar/AppBar';
 import './App.css';
-import TrendingMovies from '../pages/TrendingMovies';
 
+const TopMovies = lazy(() => import('../pages/TopMovies'));
 const Movies = lazy(() => import('./Movies/Movies'));
 const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
 const NotFound = lazy(() => import('../pages/NotFind'));
@@ -18,10 +18,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<AppBar />}>
             <Route index element={<Home />} />
-            <Route
-              path="top_movies/page/:pageNumber"
-              element={<TrendingMovies />}
-            />
+            <Route path="top_movies/page/:pageNumber" element={<TopMovies />} />
             <Route path="movies" element={<FilteredMovies />} />
             <Route path="movie/:movieId" element={<Movies />}>
               <Route path="credits" element={<Credits />} />
