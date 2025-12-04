@@ -1,14 +1,17 @@
-import { useState, Suspense, lazy } from 'react'; // 1. Додали Suspense
+import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
-import TrendingMoves from '../Pages/TrendingMovies';
-import Searchbar from './Searchbar/SeachBar';
-import Move from './Moves/Moves';
+// import TrendingMoves from '../Pages/TrendingMovies';
+// import Move from './Moves/Moves';
 import AppBar from './AppBar/AppBar';
-import NotFound from '../Pages/NotFind';
+// import NotFound from '../Pages/NotFind';
 import './App.css';
-import FilteredMovies from '../Pages/FilteredMovies';
+// import FilteredMovies from '../Pages/FilteredMovies';
 
+const TrendingMovies = lazy(() => import('../Pages/TrendingMovies'));
+const Movies = lazy(() => import('./Movies/Movies'));
+const FilteredMovies = lazy(() => import('../Pages/FilteredMovies'));
+const NotFound = lazy(() => import('../Pages/NotFind'));
 const Reviews = lazy(() => import('./AdditionalInformation/Reviews'));
 const Credits = lazy(() => import('./AdditionalInformation/Credits'));
 
@@ -21,10 +24,10 @@ const App = () => {
             <Route index element={<Home />} />
             <Route
               path="top_movies/page/:pageNumber"
-              element={<TrendingMoves />}
+              element={<TrendingMovies />}
             />
-            <Route path="movie" element={<FilteredMovies />} />
-            <Route path="movie/:movieId" element={<Move />}>
+            <Route path="movies" element={<FilteredMovies />} />
+            <Route path="movie/:movieId" element={<Movies />}>
               <Route path="credits" element={<Credits />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>

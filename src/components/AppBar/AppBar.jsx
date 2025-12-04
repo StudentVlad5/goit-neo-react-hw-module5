@@ -5,7 +5,7 @@ import css from './AppBar.module.css';
 const navItems = [
   { href: '/', text: 'Home', icon: FaCrown },
   { href: '/top_movies/page/1', text: 'Top Movies', icon: FaBook },
-  { href: '/moves', text: 'Movies', icon: FaCat },
+  { href: '/movies', text: 'Movies', icon: FaCat },
 ];
 
 function AppBar() {

@@ -2,11 +2,11 @@ import { useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { Suspense } from 'react';
 import { BackLink } from '../BackLink/BackLink';
-import css from './Moves.module.css';
+import css from './Movies.module.css';
 import AddInfo from '../AdditionalInformation/AddInfo';
 import NoFoto from '../../Images/no_image.png';
 
-function Moves() {
+function Movies() {
   const [item, setItem] = useState('');
   const [status, setStatus] = useState('idle');
   const [posterpage, setPosterpage] = useState('');
@@ -80,9 +80,9 @@ function Moves() {
             >
               {popularity.toFixed(2)} %
             </h2>
-            <div className="overView"> {overview}</div>
+            <div className={css.overView}> {overview}</div>
             <div>
-              <ul className="GanreMove">
+              <ul className={css.ganreMove}>
                 <h2>Ganre of Movie:</h2>
                 {genres.map(key => (
                   <li key={key.id}>{key.name}</li>
@@ -102,4 +102,4 @@ function Moves() {
   }
 }
 
-export default Moves;
+export default Movies;

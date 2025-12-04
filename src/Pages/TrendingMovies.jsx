@@ -60,7 +60,7 @@ function TrendingMovies() {
             <li className={css.styledLi} key={id}>
               <NavLink
                 className={css.navItem}
-                to={`/moves/${id}`}
+                to={`/movie/${id}`}
                 state={{ from: location }}
               >
                 {name ?? title}

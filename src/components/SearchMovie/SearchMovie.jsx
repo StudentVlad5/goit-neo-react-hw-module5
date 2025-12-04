@@ -86,7 +86,7 @@ function SearchMovie() {
               <li className={css.styledLi} key={id}>
                 <NavLink
                   className={css.navItem}
-                  to={`/moves/${id}`}
+                  to={`/movie/${id}`}
                   state={{ from: location }}
                 >
                   {title}
@@ -101,7 +101,7 @@ function SearchMovie() {
           {page > 1 && (
             <NavLink
               className={css.navNumber}
-              to={`/moves?query=${query}&page=${page - 1}`}
+              to={`/movies?query=${query}&page=${page - 1}`}
             >
               <FaArrowAltCircleLeft
                 style={{ fontSize: '50px', fill: 'rgba(84,78,114,1)' }}
@@ -122,7 +122,7 @@ function SearchMovie() {
           {page < totalPages && (
             <NavLink
               className={css.navNumber}
-              to={`/moves?query=${query}&page=${page + 1}`}
+              to={`/movies?query=${query}&page=${page + 1}`}
             >
               <FaArrowAltCircleRight
                 style={{ fontSize: '50px', fill: 'rgba(84,78,114,1)' }}

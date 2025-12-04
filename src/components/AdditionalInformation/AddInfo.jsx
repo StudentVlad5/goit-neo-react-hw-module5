@@ -1,29 +1,27 @@
 import { Link } from 'react-router-dom';
+import css from './AddInfo.module.css';
 
 const AddInfo = ({ backLink }) => {
   return (
-    <ul>
-      <li className="styleAddInfo">
-        <h3>
-          <Link
-            style={{ textDecoration: 'none' }}
-            to={'credits'}
-            state={{ from: backLink }}
-          >
-            Credits
-          </Link>
-        </h3>
+    <ul className={css.listAddInfo}>
+      <li className={css.styleAddInfo}>
+        <Link
+          className={css.addInfoLink}
+          to="credits"
+          state={{ from: backLink }}
+        >
+          Credits
+        </Link>
       </li>
-      <li className="styleAddInfo">
-        <h3>
-          <Link
-            style={{ textDecoration: 'none' }}
-            to={'reviews'}
-            state={{ from: backLink }}
-          >
-            Reviews
-          </Link>
-        </h3>
+
+      <li className={css.styleAddInfo}>
+        <Link
+          className={css.addInfoLink}
+          to="reviews"
+          state={{ from: backLink }}
+        >
+          Reviews
+        </Link>
       </li>
     </ul>
   );
