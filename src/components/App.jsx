@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import AppBar from './AppBar/AppBar';
 import './App.css';
-import TopMovies from '../pages/TopMovies';
+import { TopMovies } from '../pages/TopMovies';
 
 const Movies = lazy(() => import('./Movies/Movies'));
 const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
