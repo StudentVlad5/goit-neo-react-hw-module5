@@ -4,10 +4,10 @@ import Home from './Home/Home';
 import AppBar from './AppBar/AppBar';
 import './App.css';
 
-const TopMovies = lazy(() => import('../pages/TopMovies'));
+const TopMovies = lazy(() => import('../pageses/TopMovies'));
 const Movies = lazy(() => import('./Movies/Movies'));
-const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
-const NotFound = lazy(() => import('../pages/NotFind'));
+const FilteredMovies = lazy(() => import('../pageses/FilteredMovies'));
+const NotFound = lazy(() => import('../pageses/NotFind'));
 const Reviews = lazy(() => import('./AdditionalInformation/Reviews'));
 const Credits = lazy(() => import('./AdditionalInformation/Credits'));
 
