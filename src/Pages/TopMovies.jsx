@@ -3,7 +3,7 @@ import { useLocation, useParams, NavLink } from 'react-router-dom';
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import css from '../components/SearchMovie/SearchMovie.module.css';
 
-function TopMovies() {
+const TopMovies = () => {
   const [listTrendsMoves, setlistTrendsMoves] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -109,6 +109,6 @@ function TopMovies() {
   }
 
   return null;
-}
+};
 
 export default TopMovies;
