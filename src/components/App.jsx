@@ -3,8 +3,8 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './Home/Home';
 import AppBar from './AppBar/AppBar';
 import './App.css';
+import TopMovies from '../pages/TopMovies';
 
-const TopMovies = lazy(() => import('../pages/TopMovies'));
 const Movies = lazy(() => import('./Movies/Movies'));
 const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
 const NotFound = lazy(() => import('../pages/NotFind'));
