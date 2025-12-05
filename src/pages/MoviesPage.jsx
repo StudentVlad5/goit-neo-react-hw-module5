@@ -12,8 +12,14 @@ const TopMoviesPage = () => {
   const refSection = useRef(null);
 
   useEffect(() => {
-    const pageToFetch = pageNumber || 1;
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
 
+  useEffect(() => {
+    const pageToFetch = pageNumber || 1;
     let itemForFetch = `https://api.themoviedb.org/3/trending/movie/day?page=${pageToFetch}&api_key=30a2ce985f394458475cdee9944c725b&sort_by=popularity.desc`;
 
     async function listOfTrendMoves() {

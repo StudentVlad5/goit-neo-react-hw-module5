@@ -19,6 +19,13 @@ function MovieDetailsPage() {
   const { movieId } = useParams();
 
   useEffect(() => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }, []);
+
+  useEffect(() => {
     if (!movieId) return;
     let moveForFetch = `https://api.themoviedb.org/3/movie/${movieId}?api_key=30a2ce985f394458475cdee9944c725b&language`;
 
