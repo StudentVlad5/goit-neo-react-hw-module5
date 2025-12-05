@@ -1,4 +1,4 @@
-import cantFind from '../images/cantFind.jpg';
+import cantFind from '../assets/images/cantFind.jpg';
 import { BackLink } from '../components/BackLink/BackLink';
 
 const NotFound = () => {

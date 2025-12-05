@@ -4,7 +4,7 @@ import { Suspense } from 'react';
 import { BackLink } from '../BackLink/BackLink';
 import css from './Movies.module.css';
 import AddInfo from '../AdditionalInformation/AddInfo';
-import NoFoto from '../../images/no_image.png';
+import NoFoto from '../../assets/images/no_image.png';
 
 function Movies() {
   const [item, setItem] = useState('');
