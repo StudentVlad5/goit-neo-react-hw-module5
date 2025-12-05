@@ -1,12 +1,12 @@
 import { useState, useEffect } from 'react';
 import { Outlet, useLocation, useParams } from 'react-router-dom';
 import { Suspense } from 'react';
-import { BackLink } from '../BackLink/BackLink';
-import css from './Movies.module.css';
-import AddInfo from '../AdditionalInformation/AddInfo';
-import NoFoto from '../../assets/images/no_image.png';
+import { BackLink } from '../components/BackLink/BackLink';
+import css from './MovieDetailsPage.module.css';
+import AddInfo from '../components/AdditionalInformation/AddInfo';
+import NoFoto from '../assets/images/no_image.png';
 
-function Movies() {
+function MovieDetailsPage() {
   const [item, setItem] = useState('');
   const [status, setStatus] = useState('idle');
   const [posterpage, setPosterpage] = useState('');
@@ -49,6 +49,9 @@ function Movies() {
     }
   }, [item, movieId]);
 
+  if (status === 'pending') {
+    return <div className="loading">Loading...</div>;
+  }
   if (status === 'resolved') {
     return (
       <div>
@@ -102,4 +105,4 @@ function Movies() {
   }
 }
 
-export default Movies;
+export default MovieDetailsPage;

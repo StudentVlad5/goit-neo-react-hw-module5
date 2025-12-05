@@ -1,7 +1,7 @@
 import SearchMovie from '../components/SearchMovie/SearchMovie';
 import Searchbar from '../components/Searchbar/SeachBar';
 
-const FilteredMovies = () => {
+const FilteredMoviesPage = () => {
   return (
     <>
       <Searchbar />;
@@ -10,4 +10,4 @@ const FilteredMovies = () => {
   );
 };
 
-export default FilteredMovies;
+export default FilteredMoviesPage;

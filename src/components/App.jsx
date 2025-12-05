@@ -1,26 +1,29 @@
 import { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
-import Home from './Home/Home';
-import AppBar from './AppBar/AppBar';
+import HomePage from '../pages/HomePage';
+import Navigation from './Navigation/Navigation';
 import './App.css';
 
-const TopMovies = lazy(() => import('../pages/TopMovies'));
-const Movies = lazy(() => import('./Movies/Movies'));
-const FilteredMovies = lazy(() => import('../pages/FilteredMovies'));
-const NotFound = lazy(() => import('../pages/NotFind'));
-const Reviews = lazy(() => import('./AdditionalInformation/Reviews'));
-const Credits = lazy(() => import('./AdditionalInformation/Credits'));
+const TopMoviesPage = lazy(() => import('../pages/MoviesPage'));
+const MovieDetailsPage = lazy(() => import('../pages/MovieDetailsPage'));
+const FilteredMoviesPage = lazy(() => import('../pages/FilteredMoviesPage'));
+const NotFound = lazy(() => import('../pages/NotFoundPage'));
+const Reviews = lazy(() => import('./AdditionalInformation/MovieCast'));
+const Credits = lazy(() => import('./AdditionalInformation/MovieReviews'));
 
 const App = () => {
   return (
     <div className="app">
       <Suspense fallback={<div>Loading...</div>}>
         <Routes>
-          <Route path="/" element={<AppBar />}>
-            <Route index element={<Home />} />
-            <Route path="top_movies/page/:pageNumber" element={<TopMovies />} />
-            <Route path="movies" element={<FilteredMovies />} />
-            <Route path="movie/:movieId" element={<Movies />}>
+          <Route path="/" element={<Navigation />}>
+            <Route index element={<HomePage />} />
+            <Route
+              path="top_movies/page/:pageNumber"
+              element={<TopMoviesPage />}
+            />
+            <Route path="movies" element={<FilteredMoviesPage />} />
+            <Route path="movie/:movieId" element={<MovieDetailsPage />}>
               <Route path="credits" element={<Credits />} />
               <Route path="reviews" element={<Reviews />} />
             </Route>

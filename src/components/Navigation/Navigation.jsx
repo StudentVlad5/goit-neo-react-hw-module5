@@ -1,6 +1,6 @@
 import { Outlet, NavLink } from 'react-router-dom';
 import { FaCat, FaBook, FaCrown } from 'react-icons/fa';
-import css from './AppBar.module.css';
+import css from './Navigation.module.css';
 
 const navItems = [
   { href: '/', text: 'Home', icon: FaCrown },
@@ -8,7 +8,7 @@ const navItems = [
   { href: '/movies', text: 'Movies', icon: FaCat },
 ];
 
-function AppBar() {
+function Navigation() {
   return (
     <div className={css.layout}>
       <header className={css.header}>
@@ -40,4 +40,4 @@ function AppBar() {
   );
 }
 
-export default AppBar;
+export default Navigation;
